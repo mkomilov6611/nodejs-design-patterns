@@ -10,6 +10,7 @@
     "type": "git",
     "url": "git+https://github.com/mkomilov6611/nodejs-design-patterns.git"
   },
+  "type": "module",
   "keywords": [],
   "author": "",
   "license": "ISC",
