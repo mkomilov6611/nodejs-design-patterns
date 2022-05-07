@@ -3,24 +3,39 @@ import { dirname } from "path";
 import superagent from "superagent";
 import mkdirp from "mkdirp";
 import { urlToFilename, getPageLinks } from "./utils.js";
+import TaskQueue from "./taskQueue.js";
 
-export function spider(url, nesting) {
+const spidering = new Set();
+
+export function spider(url, nesting, concurrency) {
+  console.log("Spidering");
+  const queue = new TaskQueue(concurrency);
+
+  return spiderTask(url, nesting, queue);
+}
+
+function spiderTask(url, nesting, queue) {
+  if (spidering.has(url)) {
+    return Promise.resolve();
+  }
+
+  spidering.add(url);
+
   const filename = urlToFilename(url);
-
-  return fsPromises
-    .readFile(filename, "utf8")
-    .catch((err) => {
+  const task = () => {
+    return fsPromises.readFile(filename, "utf8").catch((err) => {
       if (err.code !== "ENOENT") {
         throw err;
       }
 
       // The file doesnt exist, so lets download it
       return download(url, filename);
-    })
-    .then((content) => spiderLinks(url, content, nesting))
-    .catch((err) => {
-      throw err;
     });
+  };
+
+  return queue
+    .runTask(task)
+    .then((content) => spiderLinks(url, content, nesting, queue));
 }
 
 function download(url, filename) {
@@ -44,18 +59,13 @@ function download(url, filename) {
     });
 }
 
-function spiderLinks(currentUrl, content, nesting) {
-  let promise = Promise.resolve();
-
+function spiderLinks(currentUrl, content, nesting, queue) {
   if (nesting === 0) {
-    return promise;
+    return Promise.resolve();
   }
 
   const links = getPageLinks(currentUrl, content);
+  const promises = links.map((link) => spider(link, nesting - 1, queue));
 
-  for (const link of links) {
-    promise = promise.then(() => spider(link, nesting - 1));
-  }
-
-  return promise;
+  return Promise.all(promises);
 }
