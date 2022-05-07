@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="shortcut icon" href="" type="image/x-icon">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/main.css">
+	<title>Bizning Uylar</title>
+</head>
+<body>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3YKQLM0JFS"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-3YKQLM0JFS');
+</script>
+	<div class="feedback">
+		<div class="feedback-content">
+			<span class="feedback__close">
+				<img src="img/close.svg" alt="ico">
+			</span>
+			<h3 class="feedback__title">
+				Raqamingizni qoldiring
+			</h3>
+			<p class="feedback__text">
+				Mutaxassislarimiz siz bilan aloqaga chiqishlari uchun raqamingizni qoldiring.
+			</p>
+			<form action="/telegram.php" method="post" class="feedback-form">
+				<label for="feedback-form__tel">Ismingizni kiriting</label>
+				<input type="name" class="feedback-form__name" name="name" id="feedback-form__name" placeholder="Ф.И.О" required="">
+          		<label for="feedback-form__name">Telefon raqamingiz</label> 
+				<input type="tel" class="feedback-form__tel" name="phone" id="feedback-form__tel" placeholder="+998 (__) ___-__-__" maxlength="19" required="">
+				<input type="hidden" name="type" value="Выбрал кухню ">
+          		<div class="feedback-center">
+          			<button type="submit" class="feedback-form__btn btn">Yuborish</button>
+          		</div>
+        	</form>
+		</div>
+	</div>
+	<header class="header">
+		<div class="container">
+			<div class="header__logo">
+				<a href="https://kun.uz/uz" target="_blank">
+					<img src="img/kun-uz-logo.svg" alt="kun-uz" class="img-fluid">
+				</a>
+			</div>
+			<div class="header__logo-mobi">
+				<a href="http://www.bizninguylar.uz/project/3" target="_blank">
+					<img src="img/olmazor-logo.svg" alt="olmazor" class="img-fluid">
+				</a>
+			</div>
+			<div class="header__tel">
+				<p class="header__tel-text">
+					<span>+998 71 210 44 44</span>
+					Savol bormi? Javob qaytaramiz
+				</p>
+				<div class="header__tel-ico">
+					<img src="img/phone-green.svg" alt="ico">
+				</div>
+			</div>
+		</div>
+	</header>
+	<section class="main">
+		<div class="main__img">
+			<img src="img/kitchen.jpg" alt="kitchen" class="img-fluid main__img-day">
+			<img src="img/kitchen-morning.jpg" alt="kitchen" class="img-fluid main__img-morning">
+			<img src="img/kitchen-night.jpg" alt="kitchen" class="img-fluid main__img-night">
+		</div>
+		<div class="main__range">
+			<img src="img/sun.svg" alt="ico" class="img-fluid">
+			<input type="range" value="100" min="0" max="200" class="range">
+			<img src="img/night.svg" alt="ico" class="img-fluid">
+		</div>
+		<div class="oval oval-big">
+			<img src="img/Oval-big.png" alt="oval" class="oval-bg">
+		</div>
+		<div class="oval oval-medium">
+			<img src="img/Oval.png" alt="oval" class="oval-bg">
+		</div>
+		<div class="list__btn">
+			<div class="list__back">
+				<a href="tel:+99871214444" class="btn">
+					Oshxonani tanlash
+				</a>
+				<a href="list.html">
+					<svg viewBox="0 0 78 78" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<g id="next">
+						<path id="Shape" d="M39 1C18.0461 1 1 18.0461 1 39C1 59.9539 18.0461 77 39 77C59.9539 77 77 59.9539 77 39C77 18.0461 59.9539 1 39 1Z" stroke="white"/>
+						<path id="Path" d="M46.1493 40.6492L34.4828 52.3156C34.0278 52.7706 33.4305 52.9993 32.8332 52.9993C32.2359 52.9993 31.6385 52.7706 31.1835 52.3156C30.2712 51.4033 30.2712 49.9286 31.1835 49.0163L41.2004 38.9995L31.1836 28.9827C30.2713 28.0704 30.2713 26.5958 31.1836 25.6835C32.0959 24.7712 33.5705 24.7712 34.4828 25.6835L46.1493 37.35C47.0616 38.2622 47.0616 39.7368 46.1493 40.6492Z" fill="white"/>
+						</g>
+					</svg>
+					<img src="img/next-mobi.svg" alt="ico">
+					<span>
+						Maishiy<br>texnikani?
+					</span>
+				</a>
+			</div>
+		</div>
+	</section>
+	<footer class="footer">
+		<div class="container">
+			<div class="footer__logo">
+				<a href="http://www.bizninguylar.uz/project/3" target="_blank">
+					<img src="img/olmazor-logo.svg" alt="ico">
+				</a>
+				<ul class="footer__follow follow">
+					<li class="follow__item">
+						<a href="https://t.me/bizninguylar" class="follow__link" target="_blank" rel="nofollow">
+							<img src="img/telegram.svg" alt="ico" class="img-fluid">
+						</a>
+					</li>
+					<li class="follow__item">
+						<a href="https://www.instagram.com/bizninguylar/" class="follow__link" target="_blank" rel="nofollow">
+							<img src="img/instagram.svg" alt="ico" class="img-fluid">
+						</a>
+					</li>
+					<li class="follow__item">
+						<a href="https://www.facebook.com/bizninguylar/" class="follow__link" target="_blank" rel="nofollow">
+							<img src="img/facebook.svg" alt="ico" class="img-fluid">
+						</a>
+					</li>
+					<li class="follow__item footer-tel">
+						<a href="tel:+99871214444" class="follow__link" rel="nofollow">
+							<img src="img/phone.svg" alt="ico">
+						</a>
+					</li>
+				</ul>
+			</div>
+			<div class="footer__btn">
+				<a href="http://www.bizninguylar.uz/newws/25" target="_blank"><span>Aksiya shartlari</span> <img src="img/arrow.svg" alt="ico" class="img-fluid"></a>
+			</div>
+			<div class="footer__logo-right">
+				<a href="http://www.bizninguylar.uz/" target="_blank">
+					<img src="img/bu-logo.svg" alt="Bizning Uylar" class="img-fluid">
+				</a>
+			</div>
+		</div>
+	</footer>
+	<script src="js/jquery-3.4.1.min.js"></script>
+	<script src="js/jquery.inputmask.min.js"></script>
+	<script src="js/main.js"></script>
+</body>
+</html>
