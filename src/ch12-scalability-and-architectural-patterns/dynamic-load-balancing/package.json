@@ -1,0 +1,17 @@
+{
+  "name": "dynamic-load-balancing",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "consul": "^0.40.0",
+    "http-proxy": "^1.18.1",
+    "portfinder": "^1.0.28"
+  }
+}
