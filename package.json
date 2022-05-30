@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/mkomilov6611/nodejs-design-patterns#readme",
   "dependencies": {
-    "chance": "^1.1.8"
+    "chance": "^1.1.8",
+    "get-stream": "^6.0.1"
   }
 }
