@@ -24,7 +24,7 @@ const server = createServer((req, res) => {
   consulClient.agent.service.list((err, services) => {
     const servers =
       !err &&
-      Object.value(services).filter((service) =>
+      Object.values(services).filter((service) =>
         service.Tags.includes(route.service)
       );
 

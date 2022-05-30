@@ -26,7 +26,7 @@ async function main() {
     );
   }
 
-  function unregisterService() {
+  function unregisterService(err) {
     err && console.error(err);
     console.log(`deregisterubg ${serviceId}`);
 
